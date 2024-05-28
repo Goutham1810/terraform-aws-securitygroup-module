@@ -8,11 +8,10 @@ resource "aws_security_group" "allow_tls" {
         
         for_each = var.ingress_rules
         content {
-          
-          from_port = egress.value["from_port"]
-          to_port = egress.value["to_port"]
-          protocol = egress.protocol["protocol"]
-          cidr_blocks = egress.cidr_blocks["cidr_blocks"]
+          from_port     =   egress.value["from_port"]
+          to_port       =   egress.value["to_port"]
+          protocol      =   egress.value["protocol"]
+          cidr_blocks   =   egress.value["cidr_blocks"]
         }
       
     }
